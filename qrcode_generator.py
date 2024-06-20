@@ -36,7 +36,7 @@ def add_qr_to_pdf(input_pdf, output_pdf, qr_code_file, page_number, position):
         output.write(outputStream)
 
 
-def generate_qr_code_and_add_to_pdf(data, position=(100, 100)):
+def generate_qr_code_and_add_to_pdf(data, position):
     """Generates QR codes from the provided data and saves them as image files.
     Also adds the QR codes to specified PDF files.
     
@@ -119,7 +119,6 @@ if __name__ == "__main__":
     
     position = (pixels_to_inches(width_distance), pixels_to_inches(height_distance))
     
-
     data = {
         "Bakari.png": "https://github.com/qfjkl/attestation-minjec/blob/main/Attestations/BAKARI.pdf",
         "Beyeck.png": "https://github.com/qfjkl/attestation-minjec/blob/main/Attestations/BEYECK.pdf",
@@ -134,4 +133,4 @@ if __name__ == "__main__":
         "Taka.png": "https://github.com/qfjkl/attestation-minjec/blob/main/Attestations/TAKA.pdf"
     }
 
-    generate_qr_code_and_add_to_pdf(data)
+    generate_qr_code_and_add_to_pdf(data, position)
